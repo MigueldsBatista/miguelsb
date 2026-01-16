@@ -14,8 +14,12 @@ class SiteStat(models.Model):
     def __str__(self) -> str:
         return f"Cliques: {self.button_clicks} | Visitas: {self.total_visitors}"
 
+
     def save(self, *args, **kwargs) -> None:
         if not self.pk and SiteStat.objects.exists():
             raise ValidationError("Apenas uma instância de SiteStat é permitida.")
         return super().save(*args, **kwargs)
 
+    def increment_clicks(self) -> None:
+        self.button_clicks += 1
+        self.save()

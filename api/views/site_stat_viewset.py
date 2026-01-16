@@ -13,10 +13,7 @@ class IncrementClickViewSet(APIView):
     def post(self, request):
         # Obtém o único registro ou cria um se não existir
         stat, _ = SiteStat.objects.get_or_create(pk=1)
-
-        stat.button_clicks += 1
-        stat.save()
-
+        stat.increment_clicks()
         serializer = SiteStatSerializer(stat)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
