@@ -1,0 +1,46 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django>=6.0.1",
+    "djangorestframework>=3.16.1",
+]
+
+[dependency-groups]
+dev = [
+    "django-stubs>=5.2.8",
+    "mypy>=1.19.1",
+    "ruff>=0.14.13",
+]
+
+[tool.mypy]
+disallow_untyped_defs = false
+check_untyped_defs = true
+# Se o erro for "var-annotated", você pode ignorar especificamente
+
+[tool.ruff]
+# Minimal python version
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+
+select = [
+    "E",   # pycodestyle errors - Checks for PEP 8 style violations and formatting issues
+    "W",   # pycodestyle warnings - Warns about PEP 8 style issues that are less critical than errors
+    "F",   # pyflakes - Detects logical errors like undefined variables, unused imports, and dead code
+    "I",   # isort - Ensures imports are properly organized and sorted according to conventions
+    "B",   # flake8-bugbear - Catches common logical mistakes and design problems that lead to bugs
+    "C4",  # flake8-comprehensions - Suggests improvements for list/dict/set comprehensions and generators
+    "UP",  # pyupgrade - Recommends modern Python syntax and removes deprecated patterns for the target version
+    "DJ",  # flake8-django - Enforces Django-specific best practices and detects common Django anti-patterns
+]
+
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
