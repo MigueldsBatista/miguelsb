@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from api.models import Certification, SiteStat
+from api.models.project import Project
+
+admin.site.register(Project)
+admin.site.register(Certification)
+admin.site.register(SiteStat)

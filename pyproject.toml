@@ -9,10 +9,10 @@ dependencies = [
     "djangorestframework>=3.16.1",
 ]
 
+
 [dependency-groups]
 dev = [
     "django-stubs>=5.2.8",
-    "mypy>=1.19.1",
     "ruff>=0.14.13",
 ]
 
