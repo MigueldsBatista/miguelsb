@@ -15,6 +15,10 @@ export default defineNuxtConfig({
   alias: {
     '@': '/<rootDir>/frontend/'
   },
+  devServer: {
+    host: '0.0.0.0', // Listen on all network interfaces
+    port: 3000
+  },
   routeRules: {
     '/api': {
       cors: true,

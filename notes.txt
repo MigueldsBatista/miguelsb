@@ -1,0 +1,50 @@
+* desenvolvi código que está em ambiente de produção
+* segui práticas de integração continua usando gitlab inicialmente, jenkins para pipelines e gerrit como repositório e code review
+* desenvolvi novas páginas (tb em produção) usando componentes vue com composition API
+* no backend desenvolvi novos endpoints, serializers, filters etc...
+* fiz diversas refatoraçõe, composables no frontend, enfim
+* exemplos nova tela de login, página com gráficos interativos que vc clicava em um e todos os outros se atualizavam
+* otimizei endpoints do django com pre fetch e select related reduzindo até 90% no número de queries ao banco em certos endpoints
+* otimizei imagens dockers com técnicas de multi-stage build e cache bem aplicado reduzindo até 33% no tamanho da imagem do backend
+* atuei como PO para estudantes da residência do CIn, fornecendo suportes em reuniões
+* praticava regularmente cerimônias de metodologias ágeis como sprint reviews, e familiriaridade com JIRA
+
+
+Descrição inicial da vaga
+Worked with code development and review. 
+Perform code integration using Git; 
+implement new tools and provide support for existing ones; 
+prepare tools developed by researchers (Master’s and PhD students) to be deployed in the production environment;
+plan, develop, create, and maintain websites and web systems with quality (well-written, easy to understand, following community standards, and well-documented);
+provide support for the database structure of the tools; 
+keep documentation up to date; 
+stay current with new tools and programming languages.
+
+Technical Highlights & Achievements:
+
+* Building reactive interfaces using Vue.js (Composition API). Developed interactive dashboards with synchronized data visualization, refactored old components (Options API) into modular Composables.
+* Developed API's using Python (Django Rest Framework). Implemented ORM optimizations, achieving up to a 90% reduction in database queries for specific endpoints.
+* Worked with continuous integration (CI) pipelines using GitLab and Jenkins, and Code Review processes via Gitlab and Gerrit.
+* Optimized Docker environments with multi-stage builds and caching strategies, resulting up to 33% reduction in backend image size.
+* Acted as Product Owner (PO) for residents at CIn/UFPE, providing technical guidance and requirements support. 
+* Active participation in Agile ceremonies (Sprint Reviews, Planning) and workflow management via JIRA.
+
+
+
+I am Miguel, a Computer Science student at CESAR School with experience developing and maintaining software in production environments.
+
+I aim to specialize in distributed systems architecture, focusing on cloud computing, microservices, and scalable software development.
+
+Hard Skills
+Programming Languages: Python, Java, JavaScript, HTML, CSS
+Frameworks: Django, Spring Boot (Spring Data, Spring Security)
+APIs & Web Development: REST APIs, Spring Boot
+Testing: Unit Testing (JUnit), Automated Testing (Selenium)
+Databases: MySQL, PostgreSQL
+DevOps & Version Control: Git, Docker, CI/CD (GitHub Actions)
+BI & Automation: Power BI , Power Apps, Power Automate
+Agile Methodologies: Scrum, Kanban
+
+Parte 1, aq trabal
+
+Software development, process automation, and data extraction using tools like Python, Power BI, Power Apps, and Power Automate. Utilization of libraries such as Selenium and frameworks like Django for web development and creating solutions aligned with Software Engineering best practices.

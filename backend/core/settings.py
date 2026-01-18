@@ -29,11 +29,31 @@ DEBUG = True
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1,backend').split(',')
 
 
-# CORS Configuration
+# CORS Configuration - Allow network access
+import socket
+
+# Get local IP for CORS
+def get_local_ip():
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        local_ip = s.getsockname()[0]
+        s.close()
+        return local_ip
+    except:
+        return "localhost"
+
+LOCAL_IP = get_local_ip()
+
+# Allow local network access
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    f"http://{LOCAL_IP}:3000",
 ]
+
+# Also allow CORS from any origin in development (comment this in production)
+CORS_ALLOW_ALL_ORIGINS = DEBUG
 
 CORS_ALLOW_CREDENTIALS = True
 
