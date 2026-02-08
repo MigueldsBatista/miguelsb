@@ -6,10 +6,7 @@ import { Toaster } from 'vue-sonner';
 
 <template>
   <Toaster position="top-right" richColors :duration="5000" />
-  <RouterView #="{ Component }">
-    <DefaultLayout>
-      <component :is="Component" />
-    </DefaultLayout>
-  </RouterView>
-
+  <DefaultLayout>
+    <RouterView />
+  </DefaultLayout>
 </template>

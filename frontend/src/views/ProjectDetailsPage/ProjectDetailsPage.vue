@@ -4,11 +4,14 @@ import useNotify from '@/composables/useNotify';
 import { projects } from '@/data/projects';
 import router from '@/router';
 import type { Project } from '@/types/project';
-import { getLinkInfo } from '@/utils/linkUtils';
 import { Icon } from '@iconify/vue';
 import { onMounted, ref } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
-import ProjectTechInfo from './components/ProjectTechInfo.vue';
+import ProjectDetailsAbout from './components/ProjectDetailsAbout.vue';
+import ProjectDetailsFeatured from './components/ProjectDetailsFeatured.vue';
+import ProjectDetailsGallery from './components/ProjectDetailsGallery.vue';
+import ProjectDetailsLinks from './components/ProjectDetailsLinks.vue';
+import ProjectDetailsTechInfo from './components/ProjectDetailsTechInfo.vue';
 
 const route = useRoute();
 
@@ -59,101 +62,23 @@ onMounted(fetchProject);
         {{ project?.name || 'Carregando...' }}
       </h1>
 
-      <div class="flex flex-wrap gap-4">
-        <a
-          v-for="link in project?.links"
-          :key="link.url"
-          :href="link.url"
-          target="_blank"
-          :class="getLinkInfo(link).classes"
-        >
-          <Icon
-            v-if="getLinkInfo(link).icon"
-            :icon="getLinkInfo(link).icon!"
-            class="w-5 h-5"
-          />
-          {{ getLinkInfo(link).name }}
-        </a>
-      </div>
+      <ProjectDetailsLinks :project="project" />
     </header>
 
     <!-- Conteúdo Principal -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
       <!-- Coluna Esquerda: Descrição e Detalhes -->
       <div class="lg:col-span-2 space-y-8">
-        <section class="space-y-4">
-          <h2 class="text-xl font-bold uppercase tracking-tight text-indigo-400">
-            Sobre o Projeto
-          </h2>
-          <p class="text-gray-400 text-lg leading-relaxed">
-            {{ project?.description }}
-          </p>
-        </section>
+        <ProjectDetailsAbout :project="project" />
 
-        <!-- <section
-          v-if="project?.is_featured"
-          class="p-8 rounded-2xl bg-neutral-900/50 border border-neutral-800 space-y-6"
-        >
-          <h3 class="font-bold text-white uppercase tracking-widest text-xs flex items-center gap-2">
-            <Icon
-              icon="heroicons:cpu-chip"
-              class="text-indigo-500 w-4 h-4"
-            />
-            Arquitetura e Performance
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="space-y-2">
-              <h4 class="text-sm font-bold text-gray-300">
-                Clean Architecture
-              </h4>
-              <p class="text-xs text-gray-500">
-                Implementação rigorosa de padrões de design para garantir manutenibilidade e testabilidade.
-              </p>
-            </div>
-            <div class="space-y-2">
-              <h4 class="text-sm font-bold text-gray-300">
-                Escalabilidade Horizontal
-              </h4>
-              <p class="text-xs text-gray-500">
-                Preparado para deployments em clusters Kubernetes com replicação de serviços.
-              </p>
-            </div>
-          </div>
-        </section> -->
+        <ProjectDetailsFeatured :project="project" v-if="false"/>
 
         <!-- Project Gallery Carousel -->
-        <section v-if="project?.images?.length" class="space-y-4">
-          <h3 class="text-xl font-bold uppercase tracking-tight text-indigo-400">
-            Galeria
-          </h3>
-          <div class="relative group rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800">
-            <div
-              class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide"
-              style="scrollbar-width: none; -ms-overflow-style: none;"
-            >
-              <div
-                v-for="(img, idx) in project.images"
-                :key="idx"
-                class="min-w-full snap-center"
-              >
-                <img
-                  :src="img"
-                  :alt="`${project.name} screenshot ${idx + 1}`"
-                  class="w-full h-auto object-cover max-h-[500px]"
-                />
-              </div>
-            </div>
-
-            <!-- Carousel text hint if multiple images -->
-            <div v-if="project.images.length > 1" class="absolute bottom-4 right-4 bg-black/60 px-3 py-1 rounded-full text-xs text-white backdrop-blur-sm">
-              Deslize para ver mais
-            </div>
-          </div>
-        </section>
+        <ProjectDetailsGallery :project="project" />
       </div>
 
       <!-- Coluna Direita: Tech Stack e Info -->
-      <ProjectTechInfo :project="project" />
+      <ProjectDetailsTechInfo :project="project" />
     </div>
   </div>
 </template>
