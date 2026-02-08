@@ -10,27 +10,14 @@ import type { Project } from '@/types/project';
 
 export const projects: Project[] = [
   {
-    id: 1,
-    name: 'Automação de Cenários no Microsoft Planner',
-    description: 'Solução que automatiza a criação de planos no Microsoft Planner via Microsoft Graph API, otimizando a configuração de tarefas para múltiplas filiais a partir de planilhas.',
-    tech_stack: ['Python', 'Pandas', 'Django', 'Microsoft Graph API', 'Docker', 'Apache', 'Ubuntu'],
-    links: [
-      {
-        type: 'github',
-        url: 'https://github.com/migueldsbatista/plannerAutomation'
-      }
-    ],
-    is_featured: true
-  },
-  {
     id: 2,
     name: 'Edurk - API REST Educacional',
-    description: 'API desenvolvida para a plataforma Libreflix, focada em organização de playlists de estudo, acompanhamento de progresso e fórum de interação para alunos.',
+    description: 'API desenvolvida inspirada na plataforma Libreflix, focada em organização de playlists de estudo, acompanhamento de progresso e fórum de interação para alunos.',
     tech_stack: ['Spring Boot', 'Java', 'REST API'],
     links: [
       {
         type: 'github',
-        url: 'https://github.com/migueldsbatista/edurkProject'
+        url: 'https://github.com/migueldsbatista/video_rest_api'
       }
     ],
     is_featured: false
@@ -54,7 +41,7 @@ export const projects: Project[] = [
         url: 'https://sites.google.com/cesar.school/rectech/home'
       }
     ],
-    is_featured: true // Sugiro marcar como true pela complexidade das personas
+    is_featured: true
   },
   {
     id: 4,

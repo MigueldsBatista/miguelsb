@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Icon } from '@iconify/vue';
 import { useDark, useToggle } from '@vueuse/core';
 import { useRoute } from 'vue-router';
 
